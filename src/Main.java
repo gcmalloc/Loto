@@ -1,14 +1,31 @@
 import java.util.Scanner;
 import javax.swing.JFrame;
+import javax.swing.LookAndFeel;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
+
+import GUI.LotoWindow;
 
 public class Main {
 	public static void main(String[] args) {
-		JFrame fen = new JFrame();
-		fen.setVisible(true);
-		fen.setSize(300,300);
-		fen.setDefaultCloseOperation(fen.EXIT_ON_CLOSE);
-		NumberBoard numb = new NumberBoard(10);
-		fen.add(numb);
+		try {
+			UIManager.setLookAndFeel(
+			        UIManager.getSystemLookAndFeelClassName());
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (InstantiationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (UnsupportedLookAndFeelException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		new LotoWindow();
 	}
 	
 	private static void menu() {
