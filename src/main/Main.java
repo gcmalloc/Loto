@@ -1,16 +1,18 @@
+package main;
+import java.sql.Time;
 import java.util.Scanner;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
+import javax.swing.plaf.SliderUI;
+
+import jeu.Jeu;
 
 import GUI.AudioReader;
 import GUI.LotoWindow;
 
 public class Main {
-	public static void main(String[] args) {
-		AudioReader reader = new AudioReader();
-		for (int i = 1;i<91;i++) {
-		reader.read(i);
-		}
+	public static void main(String[] args) throws InterruptedException {
+		LotoWindow loto = new LotoWindow();
 	}
 	private static void menu() {
 		Jeu loto = new Jeu();
@@ -35,7 +37,11 @@ public class Main {
 					afficheHelp();
 				} else if (command.equalsIgnoreCase("N")) {
 					System.out.println("le nombre est");
-					loto.tire();
+					try {
+						loto.tire();
+					} catch (Exception e) {
+						System.out.println("le jeu est plein");
+					}
 				} else if (command.equalsIgnoreCase("C")) {
 					checkStep = true;
 				}

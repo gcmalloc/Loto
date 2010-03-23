@@ -1,23 +1,21 @@
 package GUI;
 
-import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.Font;
-import java.awt.GridLayout;
-
-import javax.swing.BorderFactory;
 import javax.swing.Box;
-import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.border.Border;
+
+import listener.MainListener;
 
 public class CommandTirePanel extends CommandPanel {
+	private static final long serialVersionUID = 4741287358494945659L;
 	private JLabel numerosTire;
 	
-	public CommandTirePanel() {
-		JButton tire = new JButton("TIRER");
+	public CommandTirePanel(LotoWindow mainWindow) {
+		super();
+		MainListener listener = MainListener.getInstance(mainWindow);
+		JButton tire = new JButton("tirer");
+		tire.addActionListener(listener);
 		tire.setAlignmentX(CENTER_ALIGNMENT);
 		tire.setPreferredSize(new Dimension(75, 75));
 		tire.setMaximumSize(new Dimension(75, 75));
@@ -40,6 +38,7 @@ public class CommandTirePanel extends CommandPanel {
 		verif.setPreferredSize(new Dimension(75, 75));
 		verif.setMaximumSize(new Dimension(75, 75));
 		verif.setAlignmentX(CENTER_ALIGNMENT);
+		verif.addActionListener(listener);
 		this.add(verif);
 	}
 	

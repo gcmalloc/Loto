@@ -2,16 +2,14 @@ package GUI;
 
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.Graphics;
-
 import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import javax.swing.border.Border;
 
 public class NumbersSubPanel extends JLabel {
+	private static final long serialVersionUID = -4934204311933897389L;
 	private boolean active;
-	private final String number;
 	private Color activeColor = Color.RED;
 	private Color unactiveColor = new Color(0,178,238);
 	private Border border = BorderFactory.createRaisedBevelBorder();
@@ -33,7 +31,6 @@ public class NumbersSubPanel extends JLabel {
 		super(String.valueOf(corrNumber));
 		this.setFont(this.font);
 		this.setBorder(this.border);
-		this.number = new Integer(corrNumber).toString();
 		active = false;
 		setHorizontalAlignment(SwingConstants.CENTER);
 		setVerticalAlignment(SwingConstants.CENTER);

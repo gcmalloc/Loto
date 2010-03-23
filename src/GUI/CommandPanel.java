@@ -1,18 +1,14 @@
 package GUI;
 
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.Font;
-
 import javax.swing.BorderFactory;
-import javax.swing.Box;
 import javax.swing.BoxLayout;
-import javax.swing.JButton;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.Border;
 
 public class CommandPanel extends JPanel {
+	private static final long serialVersionUID = -5657000048806368136L;
 		protected Font messageFont = new Font("Rasheeq",Font.PLAIN,20);
 		
 		public CommandPanel() {
